@@ -88,15 +88,15 @@ class HomeModuleAdapter(var items: List<HomeServiceItem>) : RecyclerView.Adapter
 }*/
 
 
-    class MyViewHolder(item: View) : RecyclerView.ViewHolder(item) {
-        val titleTv: TextView = item.find(R.id.title)
-        val imageView: ImageView = item.find(R.id.image_view)
-    }
+class MyViewHolder(item: View) : RecyclerView.ViewHolder(item) {
+    val titleTv: TextView = item.find(R.id.title)
+    val imageView: ImageView = item.find(R.id.image_view)
+}
 
-    private fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
-        itemView.setOnClickListener {
-            event.invoke(adapterPosition, itemViewType)
-        }
-        return this
+private fun <T : RecyclerView.ViewHolder> T.listen(event: (position: Int, type: Int) -> Unit): T {
+    itemView.setOnClickListener {
+        event.invoke(adapterPosition, itemViewType)
     }
+    return this
+}
 }
