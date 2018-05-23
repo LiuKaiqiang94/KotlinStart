@@ -1,9 +1,9 @@
-package com.liukq.kotlinstart
+package com.liukq.kotlinstart.module.home
 
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
-import com.liukq.kotlinstart.adapter.HomeModuleAdapter
+import com.liukq.kotlinstart.R
 import com.liukq.kotlinstart.model.bean.HomeServiceItem
 import com.liukq.kotlinstart.model.service.HomeService
 import com.liukq.kotlinstart.utils.SnackBarUtils
@@ -18,17 +18,13 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         initView()
-        initAdapter()
         loadData()
-        initListener()
-    }
-
-    private fun initListener() {
     }
 
     private fun initView() {
         home_rv.layoutManager = GridLayoutManager(this, 2)
         home_rv.addItemDecoration(SpacesItemDecoration(10, 0))
+        home_rv.adapter = HomeModuleAdapter(mData)
     }
 
     private fun loadData() {
@@ -43,9 +39,5 @@ class MainActivity : AppCompatActivity() {
                 home_rv.adapter.notifyDataSetChanged()
             }
         }
-    }
-
-    private fun initAdapter() {
-        home_rv.adapter = HomeModuleAdapter(mData)
     }
 }

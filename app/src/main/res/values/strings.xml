@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">KotlinStart</string>
+    <string name="commonweal">公益</string>
+    <string name="news">资讯</string>
+    <string name="institutional">机构</string>
+    <string name="message">消息</string>
+    <string name="center">个人中心</string>
 </resources>

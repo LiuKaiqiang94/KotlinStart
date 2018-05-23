@@ -6,4 +6,5 @@
 
     <!--custom-->
     <color name="white">#ffffff</color>
+    <color name="gary">#a4a4a4</color>
 </resources>
