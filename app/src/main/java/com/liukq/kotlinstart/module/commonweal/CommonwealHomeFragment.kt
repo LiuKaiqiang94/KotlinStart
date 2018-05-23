@@ -11,9 +11,11 @@ import com.liukq.kotlinstart.R
 import com.liukq.kotlinstart.model.bean.CommonwealBannerItem
 import com.liukq.kotlinstart.model.service.CommonwealService
 import com.liukq.kotlinstart.utils.SnackBarUtils
+import com.liukq.kotlinstart.widget.LoongsCityBanner
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.fragment_commonwel_home.*
 import org.jetbrains.anko.doAsync
+import org.jetbrains.anko.find
 import org.jetbrains.anko.uiThread
 
 /**
@@ -41,19 +43,16 @@ class CommonwealHomeFragment : Fragment() {
                     return@uiThread
                 }
                 bannerList.addAll(data)
-                banner.setData(R.layout.item_banner, bannerList, null)
-                banner.setmAdapter({ _, view, position ->
-                    val iv = view.findViewById(R.id.iv_pager_adapter) as ImageView
-                    iv.scaleType = ImageView.ScaleType.CENTER_CROP
-                    Glide.with(context).load(bannerList[position].pic)
-                            .into(iv)
+                banner.setData(R.layout.item_banner, bannerList, arrayListOf())
+                banner.setmAdapter(object : LoongsCityBanner.XBannerAdapter {
+                    override fun loadBanner(banner: LoongsCityBanner, view: View, position: Int) {
+                        val iv = view.find(R.id.iv_pager_adapter) as ImageView
+                        iv.scaleType = ImageView.ScaleType.CENTER_CROP
+                        Glide.with(context).load(bannerList[position].pic)
+                                .into(iv)
+                    }
                 })
             }
         }
     }
-
-    private fun initView() {
-
-    }
-
 }
