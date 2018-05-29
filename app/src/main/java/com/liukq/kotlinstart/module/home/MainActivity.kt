@@ -1,11 +1,15 @@
 package com.liukq.kotlinstart.module.home
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.support.v7.widget.GridLayoutManager
+import android.view.Menu
+import android.view.MenuItem
 import com.liukq.kotlinstart.R
 import com.liukq.kotlinstart.model.bean.HomeServiceItem
 import com.liukq.kotlinstart.model.service.HomeService
+import com.liukq.kotlinstart.module.city.CityActivity
 import com.liukq.kotlinstart.utils.SnackBarUtils
 import com.liukq.kotlinstart.utils.SpacesItemDecoration
 import kotlinx.android.synthetic.main.activity_main.*
@@ -39,5 +43,15 @@ class MainActivity : AppCompatActivity() {
                 home_rv.adapter.notifyDataSetChanged()
             }
         }
+    }
+
+    override fun onCreateOptionsMenu(menu: Menu?): Boolean {
+        menuInflater.inflate(R.menu.main_menu, menu)
+        return true
+    }
+
+    override fun onOptionsItemSelected(item: MenuItem?): Boolean {
+        startActivity(Intent(this, CityActivity::class.java))
+        return true
     }
 }

@@ -20,7 +20,9 @@
                 <category android:name="android.intent.category.LAUNCHER"/>
             </intent-filter>
         </activity>
-        <activity android:name="com.liukq.kotlinstart.module.commonweal.CommonwealActivity"/>
+        <activity android:name=".module.commonweal.CommonwealActivity"/>
+        <activity android:name=".module.city.CityActivity">
+        </activity>
     </application>
 
 </manifest>

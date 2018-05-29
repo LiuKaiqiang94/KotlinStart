@@ -31,7 +31,12 @@ class CommonwealHomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initView()
         loadData()
+    }
+
+    private fun initView() {
+        love_count_view.setCount(987654)
     }
 
     private fun loadData() {

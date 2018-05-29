@@ -4,6 +4,11 @@
               android:layout_height="match_parent"
               android:orientation="vertical">
 
+    <com.liukq.kotlinstart.widget.LoveCountView
+        android:id="@+id/love_count_view"
+        android:layout_width="match_parent"
+        android:layout_height="45dp"/>
+
     <com.liukq.kotlinstart.widget.LoongsCityBanner
         android:id="@+id/banner"
         android:layout_width="match_parent"

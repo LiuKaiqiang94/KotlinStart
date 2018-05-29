@@ -5,4 +5,5 @@
     <string name="institutional">机构</string>
     <string name="message">消息</string>
     <string name="center">个人中心</string>
+    <string name="switch_city">切换城市</string>
 </resources>

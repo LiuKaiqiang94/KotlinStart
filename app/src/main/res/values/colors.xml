@@ -2,9 +2,12 @@
 <resources>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
+    <!--<color name="colorPrimaryDark">#3F51B5</color>-->
     <color name="colorAccent">#FF4081</color>
 
     <!--custom-->
     <color name="white">#ffffff</color>
     <color name="gary">#a4a4a4</color>
+    <color name="black">#333333</color>
+    <color name="gary_f7">#f7f7f7</color>
 </resources>

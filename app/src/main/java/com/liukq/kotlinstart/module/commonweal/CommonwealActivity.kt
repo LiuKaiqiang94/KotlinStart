@@ -30,13 +30,11 @@ class CommonwealActivity : AppCompatActivity() {
 
     private fun initListener() {
         radio_group.setOnCheckedChangeListener { _, checkedId ->
-            var i = 0
-            while (i < radio_group.childCount) {
-                if (checkedId == radio_group.getChildAt(i).id) {
-                    changeFragment(i)
+            for (j in 0..radio_group.childCount) {
+                if (checkedId == radio_group.getChildAt(j).id) {
+                    changeFragment(j)
                     break
                 }
-                i++
             }
         }
     }
